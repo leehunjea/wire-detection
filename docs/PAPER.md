@@ -22,7 +22,7 @@
 | ConvNeXt 계열 비교 | [MaskRCNN+ConvNeXT](../notebooks/experiments/mmdetection-main__MaskRCNN%2BConvNeXT.ipynb) | ConvNeXt 체크포인트와 대체 설정을 포함한 실험 |
 | 모델 비교 그래프 | [chart](../notebooks/analysis/chart.ipynb) | 초록에 등장하는 비교 모델 이름과 그래프 생성 코드 |
 
-`chart.ipynb`의 수치는 원본 코드에 기록된 값입니다. 논문 최종 표와의 일치 여부를 확인하거나 실험을 다시 실행하지 않았으므로, README에 검증된 논문 성능으로 옮기지 않았습니다. RT-DETR·RTMDet·SIFT·초기 실험도 함께 보존되어 있습니다.
+`chart.ipynb`에 기록된 다섯 모델의 F1, Precision, Recall, mAP50, mAP50–95 값은 [학회 공식 논문 PDF의 68쪽](https://www.kism.or.kr/file/memoir/14_8_7.pdf#page=9)과 대조하여 모두 일치함을 확인했습니다. README의 성능 표는 이 논문 보고값을 옮긴 것이며, 정리 과정에서 학습·평가를 다시 실행하지 않았습니다. 객체 탐지 모델의 평가 지표를 변화·이상 탐지 전체 과정의 정확도로 해석하지 않습니다. RT-DETR·RTMDet·SIFT·초기 실험도 함께 보존되어 있습니다.
 
 ## 인용
 
