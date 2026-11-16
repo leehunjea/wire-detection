@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "이 연구를 인용할 때 preferred-citation의 학술지 논문을 사용해 주세요. 저자 목록은 논문의 저자 정보입니다."
+title: "배전공가 이상 탐지 연구 자료"
+type: software
+authors:
+  - family-names: "이"
+    given-names: "훈제"
+  - family-names: "김"
+    given-names: "진성"
+  - family-names: "정"
+    given-names: "세훈"
+  - family-names: "심"
+    given-names: "춘보"
+preferred-citation:
+  type: article
+  title: "딥러닝 기반 객체 탐지를 활용한 배전공가 이상 탐지 모델 연구"
+  authors:
+    - family-names: "이"
+      given-names: "훈제"
+    - family-names: "김"
+      given-names: "진성"
+    - family-names: "정"
+      given-names: "세훈"
+    - family-names: "심"
+      given-names: "춘보"
+  journal: "스마트미디어저널"
+  volume: "14"
+  issue: "8"
+  start: 60
+  end: 72
+  year: 2025
+  month: 8
+  doi: "10.30693/SMJ.2025.14.8.60"
+  url: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003234567"

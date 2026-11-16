@@ -1,0 +1,43 @@
+# Raw research assets remain in the sibling local_archive folder.
+local_archive/
+archive/
+data/
+datasets/
+models/
+weights/
+runs/
+work_dirs/
+output/
+
+# Trained and pretrained weights
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.hdf5
+*.safetensors
+
+# Generated caches and local environments
+__pycache__/
+*.py[cod]
+*.cache
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+.vscode/
+.idea/
