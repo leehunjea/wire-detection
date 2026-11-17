@@ -1,48 +1,40 @@
-# 배전공가 이상 탐지
+**English** · [한국어](README.ko.md)
 
-**한국어** | [English](README.en.md)
+![Wire detection. Change analysis. Research using YOLOv11l-seg and 2DCNN, with an illustration of wire, crossarm, and pole. Published in Smart Media Journal, 2025.](docs/assets/research-cover.svg)
 
-**Wire Detection & Change Analysis · YOLOv11l-seg + 2DCNN**
+Detecting structural changes in power distribution infrastructure through object segmentation and image comparison. This research combines **YOLOv11l-seg and a 2D CNN**, with a KCI-indexed journal publication and archived experiments.
 
-배전설비 영상에서 전선·전주 등 주요 객체를 분할하고, 영상 간 구조적 변화와 이상을 탐지하는 연구입니다. KCI 등재 논문과 관련 실험 코드, 대표 결과를 함께 정리했습니다.
+**[Read the paper ↗](https://www.kism.or.kr/file/memoir/14_8_7.pdf)** &nbsp; · &nbsp; **[View results](#representative-result)** &nbsp; · &nbsp; **[Explore code](#explore-the-code)**
 
-[논문 원문](https://www.kism.or.kr/file/memoir/14_8_7.pdf) · [DOI](https://doi.org/10.30693/SMJ.2025.14.8.60) · [KCI](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003234567) · [주요 코드](#주요-코드) · [인용](#인용)
+## Representative result
 
-## 논문 소개
+![Archived experiment: two images of a utility pole, with an added region marked by a green box in the right-hand image.](results/figures/change_detection_success.png)
 
-### 딥러닝 기반 객체 탐지를 활용한 배전공가 이상 탐지 모델 연구
-
-**이훈제**, 김진성, 정세훈, 심춘보<br>
-스마트미디어저널 (*Smart Media Journal*), **14(8), 60–72**, 2025년 8월
-
-논문은 **YOLOv11l-seg와 2DCNN을 결합한 이상 탐지 모델**을 다룹니다. 세그멘테이션 레이블링과 데이터 증강을 적용하고, 다섯 가지 객체 탐지 모델을 비교해 배전공가 영상 분석에 활용했습니다.
-
-| 데이터셋 | 객체 레이블 | YOLOv11l-seg mAP@50 |
-|:---:|:---:|:---:|
-| **4,475장** | **56,797개 · 3개 클래스** | **0.830** |
-
-데이터 규모는 논문 63쪽, 성능은 68쪽에 보고된 값입니다. 데이터는 학습 **3,585장** · 검증 **443장** · 시험 **447장**으로 구성되며, 클래스는 **Wire · Crossarm · Pole**입니다. [논문 원문](https://www.kism.or.kr/file/memoir/14_8_7.pdf)
-
-## 대표 결과
-
-![두 배전설비 영상을 비교하고 추가된 영역을 녹색 상자로 표시한 변화 탐지 사례](results/figures/change_detection_success.png)
-
-*보관된 실험의 변화 탐지 사례. 오른쪽 영상의 추가된 영역을 `Added`로 표시했습니다.*
+An archived change detection example: the additional region in the right-hand image is marked **Added**. This visual illustrates an individual experiment; its correspondence to the paper's final checkpoint has not been established.
 
 <details>
-<summary>비교 방법별 시각화 더 보기</summary>
+<summary>More visual results</summary>
 
-![영상 비교 방법별 변화 영역 시각화](results/figures/methods_comparison.jpg)
+![An archived comparison of image analysis methods.](results/figures/methods_comparison.jpg)
 
-이미지에 표시된 변화율은 해당 영상 쌍의 출력값입니다. 전체 데이터셋의 정확도를 뜻하지 않습니다. 이미지별 원본 위치는 [대표 결과 안내](results/README.md)에 기록했습니다.
+The change percentages describe this image pair, not dataset-level accuracy. See the [result notes](results/README.md) for original file locations and the [additional visualization](results/figures/change_detection_result.jpg).
 
 </details>
 
-## 모델 비교
+## Reported performance
 
-논문 68쪽에 수록된 모델별 평가 결과입니다. **YOLOv11l-seg** 행은 제안 연구에 사용된 모델을 표시합니다.
+**4,475 images** · **56,797 annotated objects** · **3 classes: Wire, Crossarm, Pole**
 
-| 모델 | F1 | Precision | Recall | mAP@50 | mAP@50:95 |
+The paper compares five object detectors. YOLOv11l-seg is the detector used in the proposed approach.
+
+![Published mAP comparison. YOLOv11l-seg scores 0.830 mAP@50 and 0.449 mAP@50:95. YOLOv8l-seg ties at 0.830 and scores 0.457, respectively. The full table follows.](docs/assets/detector-performance.svg)
+
+YOLOv11l-seg and YOLOv8l-seg tie at **0.830 mAP@50**; YOLOv8l-seg has higher F1 and mAP@50:95. These are **detector metrics**, not end-to-end anomaly detection accuracy. [Paper, p. 68](https://www.kism.or.kr/file/memoir/14_8_7.pdf#page=9)
+
+<details>
+<summary>Full evaluation table and dataset split</summary>
+
+| Model | F1 | Precision | Recall | mAP@50 | mAP@50:95 |
 |:---|---:|---:|---:|---:|---:|
 | Mask R-CNN | 0.573 | 0.542 | 0.581 | 0.566 | 0.237 |
 | ConvNeXt | 0.596 | 0.599 | 0.626 | 0.568 | 0.249 |
@@ -50,62 +42,74 @@
 | YOLOv9c-seg | 0.817 | 0.842 | 0.828 | 0.807 | 0.417 |
 | **YOLOv11l-seg** | **0.820** | **0.864** | **0.810** | **0.830** | **0.449** |
 
-YOLOv11l-seg와 YOLOv8l-seg의 mAP@50은 **0.830**으로 같으며, F1과 mAP@50:95는 YOLOv8l-seg가 더 높습니다. 위 값은 객체 탐지 모델의 평가 지표로, 변화·이상 탐지 전체 과정의 정확도를 의미하지 않습니다. [출처: 논문 68쪽](https://www.kism.or.kr/file/memoir/14_8_7.pdf#page=9)
+The dataset contains **3,585 training**, **443 validation**, and **447 test** images. Dataset counts come from [page 63 of the paper](https://www.kism.or.kr/file/memoir/14_8_7.pdf#page=4).
 
-표의 수치는 [모델 비교 노트북](notebooks/analysis/model_comparison.ipynb)에 기록된 값과 대조했습니다. 이번 공개 정리 과정에서 학습·평가를 다시 실행한 값은 아닙니다.
-
-## 연구 구성
-
-- **객체 탐지·분할:** 세그멘테이션 레이블과 데이터 증강을 활용한 모델 학습 및 비교
-- **변화·이상 탐지:** YOLOv11l-seg와 2DCNN을 결합한 배전공가 영상 분석
-- **결과 분석:** 영상 차이, 변화 영역 표시, 비교 그래프를 통한 결과 시각화
-
-관련 기술: **Python · PyTorch · Ultralytics · OpenCV · Detectron2 · MMDetection**
-
-## 주요 코드
-
-| 살펴볼 내용 | 노트북 |
-|:---|:---|
-| 2DCNN과 YOLOv11을 이용한 영상 비교 | [2DCNN + YOLOv11](notebooks/change_detection/yolov11_2dcnn.ipynb) |
-| YOLOv11 세그멘테이션 학습·추론 실험 | [YOLOv11](notebooks/model_experiments/yolo/yolov11_experiments.ipynb) |
-| 배전공가 변화·이상 탐지 실험 | [모델 이상 탐지](notebooks/change_detection/anomaly_detection.ipynb) |
-| 모델별 정량 결과와 비교 그래프 | [chart](notebooks/analysis/model_comparison.ipynb) |
-
-전체 파일은 [코드 구성 안내](docs/CODE_MAP.md)에서, 비교 모델과 논문의 대응 관계는 [논문과 연구 코드 안내](docs/PAPER.md)에서 확인할 수 있습니다.
-
-<details>
-<summary>저장소 구조</summary>
-
-```text
-notebooks/
-  change_detection/       변화·이상 탐지와 비교 버전
-  model_experiments/      YOLO·다른 검출 모델의 실험
-  analysis/               모델 비교·영상 전처리
-  legacy/                 초기·참고 실험
-scripts/
-  feature_matching/       SIFT·ORB 특징점 비교
-  baselines/              YOLOv5 기반 변화 탐지
-results/figures/          대표 결과 이미지
-docs/                     논문·코드·환경·자료 안내
-CITATION.*                논문 인용 정보
-```
+The metrics were checked against the [model comparison notebook](notebooks/analysis/model_comparison.ipynb). Training and evaluation were not rerun when preparing this public archive.
 
 </details>
 
-## 실행 및 자료 안내
+## Publication
 
-이 저장소는 **연구 노트북 아카이브**입니다. 실행하려면 선택한 노트북의 데이터·가중치 경로를 수정하고 해당 모델의 환경을 준비해야 합니다. 노트북에는 원본 코드 셀을 보존했으며, 공개 사본의 저장된 출력과 실행 번호를 제거했습니다.
+**Research or Anomaly Detection Model for Distribution Grids Using Deep Learning-Based Object Detection**
 
-[노트북 안내](notebooks/README.md) · [Python 스크립트 안내](scripts/README.md)
+**Hun Jea Lee**, Jin Sung Kim, Se Hoon Jung, Chun Bo Shim<br>
+*Smart Media Journal* · **14(8), 60–72** · August 2025 · KCI indexed
 
-원본 데이터, 모델 가중치, 전체 학습 로그와 원본 노트북 출력은 로컬 아카이브에 별도로 보관합니다. 공개 저장소에는 코드·문서·대표 결과를 포함했습니다.
+The study combines segmentation annotations, data augmentation, detector comparison, and change analysis for power distribution infrastructure. The English title above follows the published bibliographic record.
 
-[환경 및 실행 안내](docs/ENVIRONMENT.md) · [데이터·모델 보관 안내](docs/DATA_AND_MODELS.md) · [원본 파일 대응표](docs/FILE_PROVENANCE.csv)
+[Publisher PDF](https://www.kism.or.kr/file/memoir/14_8_7.pdf) · [DOI](https://doi.org/10.30693/SMJ.2025.14.8.60) · [KCI record](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003234567) · [BibTeX](CITATION.bib)
 
-## 인용
+## Explore the code
+
+Start with the research question that interests you:
+
+| Focus | Entry point |
+|:---|:---|
+| Compare images using YOLOv11 and a 2D CNN | [Change detection notebook](notebooks/change_detection/yolov11_2dcnn.ipynb) |
+| Examine change and anomaly detection experiments | [Anomaly detection notebook](notebooks/change_detection/anomaly_detection.ipynb) |
+| Inspect the reported model comparison | [Analysis notebook](notebooks/analysis/model_comparison.ipynb) |
+
+**[All notebooks](notebooks/README.md)** · **[Feature matching & baselines](scripts/README.md)** · **[Paper-to-code guide](docs/PAPER.md)**
+
+Python · PyTorch · Ultralytics · OpenCV · Detectron2 · MMDetection
+
+<details>
+<summary>Repository map</summary>
+
+```text
+notebooks/
+  change_detection/       Change detection and comparison variants
+  model_experiments/      YOLO and other detector experiments
+  analysis/               Model comparison and image preprocessing
+  legacy/                 Early and reference experiments
+scripts/
+  feature_matching/       SIFT and ORB feature matching
+  baselines/              YOLOv5-based change detection
+results/figures/          Original representative result images
+docs/                     Paper, code, environment, and archive notes
+  assets/                 README cover and published-metrics chart
+CITATION.*                Paper citation metadata
+```
+
+[Detailed code map](docs/CODE_MAP.md) (Korean)
+
+</details>
+
+<details>
+<summary>Running experiments and accessing data</summary>
+
+This repository is an **archive of research notebooks**. To run an experiment, update the data and model-weight paths in the selected notebook and prepare the environment required by that model. Original code cells are preserved; saved outputs and execution counts have been cleared from the public copies.
+
+The standalone SIFT/ORB and YOLOv5 scripts read `Test*.jpg` inputs from the **current working directory**. Prepare their inputs or adjust the paths before running them; see the [script guide](scripts/README.md).
+
+Raw data, model weights, full training logs, and original notebook outputs remain in a separate local archive. The public repository contains code, documentation, and representative results. The cover is an illustration; the performance chart is redrawn from published values.
+
+Supporting documentation is in Korean: [Environment notes](docs/ENVIRONMENT.md) · [Data and model archive](docs/DATA_AND_MODELS.md) · [File provenance](docs/FILE_PROVENANCE.csv).
+
+</details>
+
+## Citation
 
 > 이훈제, 김진성, 정세훈, 심춘보. (2025). 딥러닝 기반 객체 탐지를 활용한 배전공가 이상 탐지 모델 연구. *스마트미디어저널*, 14(8), 60–72. https://doi.org/10.30693/SMJ.2025.14.8.60
 
-[BibTeX 다운로드](CITATION.bib) · [CITATION.cff](CITATION.cff)
-
-논문 원문은 학회 공식 링크로 제공합니다. PDF 재배포와 코드 라이선스에 관한 확인 범위는 [논문 안내](docs/PAPER.md#pdf-공개-범위)를 참고해 주세요.
+[BibTeX](CITATION.bib) · [CITATION.cff](CITATION.cff) · [Paper access and licensing notes](docs/PAPER.md#pdf-공개-범위)
