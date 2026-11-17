@@ -1,5 +1,7 @@
 # 배전공가 이상 탐지
 
+**한국어** | [English](README.en.md)
+
 **Wire Detection & Change Analysis · YOLOv11l-seg + 2DCNN**
 
 배전설비 영상에서 전선·전주 등 주요 객체를 분할하고, 영상 간 구조적 변화와 이상을 탐지하는 연구입니다. KCI 등재 논문과 관련 실험 코드, 대표 결과를 함께 정리했습니다.
