@@ -25,16 +25,16 @@ Dataset statistics are reported on page 63 of the paper; model performance is re
 
 ## Representative Results
 
-![Two images of power distribution infrastructure with an added region marked by a green bounding box](results/representative/change_detection_success.png)
+![Two images of power distribution infrastructure with an added region marked by a green bounding box](results/figures/change_detection_success.png)
 
 *An archived change detection example. The additional region in the right-hand image is marked as `Added`.*
 
 <details>
 <summary>View a comparison of image analysis methods</summary>
 
-![Change visualization using different image comparison methods](results/representative/methods_comparison.jpg)
+![Change visualization using different image comparison methods](results/figures/methods_comparison.jpg)
 
-The change percentages shown in this image are outputs for this particular image pair. They do not represent accuracy across the dataset. Original file locations are documented in the [representative results notes](results/representative/README.md) (Korean).
+The change percentages shown in this image are outputs for this particular image pair. They do not represent accuracy across the dataset. Original file locations are documented in the [representative results notes](results/README.md) (Korean).
 
 </details>
 
@@ -52,7 +52,7 @@ The following results are reported on page 68 of the paper. The **YOLOv11l-seg**
 
 YOLOv11l-seg and YOLOv8l-seg both achieve **0.830 mAP@50**; YOLOv8l-seg has higher F1 and mAP@50:95 scores. These are object detection model metrics, not accuracy measurements for the complete change and anomaly detection pipeline. [Source: paper, p. 68](https://www.kism.or.kr/file/memoir/14_8_7.pdf#page=9)
 
-The table was checked against the values stored in the [model comparison notebook](notebooks/analysis/chart.ipynb). Training and evaluation were not rerun when preparing this public archive.
+The table was checked against the values stored in the [model comparison notebook](notebooks/analysis/model_comparison.ipynb). Training and evaluation were not rerun when preparing this public archive.
 
 ## Research Components
 
@@ -66,27 +66,28 @@ Technologies: **Python · PyTorch · Ultralytics · OpenCV · Detectron2 · MMDe
 
 | Topic | Notebook |
 |:---|:---|
-| Image comparison using a 2D CNN and YOLOv11 | [2DCNN + YOLOv11](notebooks/research/2DCNN%2BYOLOv11.ipynb) |
-| YOLOv11 segmentation training and inference experiments | [YOLOv11](notebooks/experiments/YOLOv11.ipynb) |
-| Change and anomaly detection experiments | [Anomaly detection](notebooks/research/모델%20이상%20탐지.ipynb) |
-| Quantitative results and model comparison plots | [chart](notebooks/analysis/chart.ipynb) |
+| Image comparison using a 2D CNN and YOLOv11 | [2DCNN + YOLOv11](notebooks/change_detection/yolov11_2dcnn.ipynb) |
+| YOLOv11 segmentation training and inference experiments | [YOLOv11](notebooks/model_experiments/yolo/yolov11_experiments.ipynb) |
+| Change and anomaly detection experiments | [Anomaly detection](notebooks/change_detection/anomaly_detection.ipynb) |
+| Quantitative results and model comparison plots | [chart](notebooks/analysis/model_comparison.ipynb) |
 
-The [paper and code guide](docs/PAPER.md) (Korean) maps the comparison models to related notebooks.
+The [code organization guide](docs/CODE_MAP.md) describes the folders, and the [paper and code guide](docs/PAPER.md) maps the comparison models to related notebooks. Both guides are in Korean.
 
 <details>
 <summary>Repository structure</summary>
 
 ```text
 notebooks/
-  research/             Change and anomaly detection
-  experiments/          Model training and inference experiments
-  analysis/             Comparison plots and image preprocessing
-  legacy/               Early and reference experiments
-src/sift/               Feature-based image comparison
-results/representative/ Selected visual results
-docs/                   Paper, environment, data, and file provenance
-CITATION.cff            Paper citation metadata
-CITATION.bib            BibTeX
+  change_detection/       Change detection and comparison variants
+  model_experiments/      YOLO and other detector experiments
+  analysis/               Model comparison and image preprocessing
+  legacy/                 Early and reference experiments
+scripts/
+  feature_matching/       SIFT and ORB feature matching
+  baselines/              YOLOv5-based change detection
+results/figures/          Selected visual results
+docs/                     Paper, code, environment, and archive notes
+CITATION.*                Paper citation metadata
 ```
 
 </details>
@@ -94,6 +95,8 @@ CITATION.bib            BibTeX
 ## Running the Notebooks and Accessing Data
 
 This repository is an **archive of research notebooks**. To run an experiment, update the data and model weight paths in the selected notebook and prepare the environment required by that model. Original code cells are preserved; saved outputs and execution counts have been cleared from the public copies.
+
+[Notebook guide](notebooks/README.md) · [Python script guide](scripts/README.md)
 
 Raw data, model weights, full training logs, and original notebook outputs are retained separately in a local archive. This public repository contains code, documentation, and representative results.
 

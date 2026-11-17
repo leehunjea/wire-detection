@@ -1,28 +1,28 @@
-﻿original_relative_path,local_archive_relative_path,public_path,category,deduplicated
-2DCNN+YOLOv11.ipynb,local_archive\notebooks\2DCNN+YOLOv11.ipynb,notebooks/research/2DCNN+YOLOv11.ipynb,research,False
-2DCNN+YOLOv8.ipynb,local_archive\notebooks\2DCNN+YOLOv8.ipynb,notebooks/research/2DCNN+YOLOv8.ipynb,research,False
-chart.ipynb,local_archive\notebooks\chart.ipynb,notebooks/analysis/chart.ipynb,analysis,False
-EGG_Yolov8.ipynb,local_archive\notebooks\EGG_Yolov8.ipynb,notebooks/legacy/EGG_Yolov8.ipynb,legacy,False
-img.ipynb,local_archive\notebooks\img.ipynb,notebooks/analysis/img.ipynb,analysis,False
-Mask_RCNN.ipynb,local_archive\notebooks\Mask_RCNN.ipynb,notebooks/legacy/Mask_RCNN.ipynb,legacy,False
-RT-DETR.ipynb,local_archive\notebooks\RT-DETR.ipynb,notebooks/experiments/RT-DETR.ipynb,experiments,False
-SORT.ipynb,local_archive\notebooks\SORT.ipynb,notebooks/legacy/SORT.ipynb,legacy,False
-Test_Yolov8+.ipynb,local_archive\notebooks\Test_Yolov8+.ipynb,notebooks/experiments/Test_Yolov8+.ipynb,experiments,False
-Test_Yolov8+save.ipynb,local_archive\notebooks\Test_Yolov8+save.ipynb,notebooks/experiments/Test_Yolov8+save.ipynb,experiments,False
-Test_Yolov8.ipynb,local_archive\notebooks\Test_Yolov8.ipynb,notebooks/experiments/Test_Yolov8.ipynb,experiments,False
-Wire detection good.ipynb,local_archive\notebooks\Wire detection good.ipynb,notebooks/research/Wire detection good.ipynb,research,False
-YOLOv11.ipynb,local_archive\notebooks\YOLOv11.ipynb,notebooks/experiments/YOLOv11.ipynb,experiments,False
-모델 이상 탐지.ipynb,local_archive\notebooks\모델 이상 탐지.ipynb,notebooks/research/모델 이상 탐지.ipynb,research,False
-detectron2-main\detectron2.ipynb,local_archive\frameworks\detectron2-main\detectron2.ipynb,notebooks/experiments/detectron2-main__detectron2.ipynb,experiments,False
-mmdetection-main\MaskRCNN+ConvNeXT.ipynb,local_archive\frameworks\mmdetection-main\MaskRCNN+ConvNeXT.ipynb,notebooks/experiments/mmdetection-main__MaskRCNN+ConvNeXT.ipynb,experiments,False
-mmdetection-main\RTMDet.ipynb,local_archive\frameworks\mmdetection-main\RTMDet.ipynb,notebooks/experiments/mmdetection-main__RTMDet.ipynb,experiments,False
-ultralytics-main\Wire detection good.ipynb,local_archive\frameworks\ultralytics-main\Wire detection good.ipynb,notebooks/research/ultralytics-main__Wire detection good.ipynb,research,False
-yolov9-main\YOLOv9c-seg.ipynb,local_archive\frameworks\yolov9-main\YOLOv9c-seg.ipynb,notebooks/experiments/yolov9-main__YOLOv9c-seg.ipynb,experiments,False
-yolov9-main\모델 이상 탐지.ipynb,local_archive\frameworks\yolov9-main\모델 이상 탐지.ipynb,notebooks/research/모델 이상 탐지.ipynb,research,True
-Wire 변화 탐지\test 1\wiretest.ipynb,local_archive\results\change_detection\test 1\wiretest.ipynb,notebooks/research/test 1__wiretest.ipynb,research,False
-Wire 변화 탐지\test 2\wiretest copy.ipynb,local_archive\results\change_detection\test 2\wiretest copy.ipynb,notebooks/research/test 2__wiretest copy.ipynb,research,False
-Sift 알고리즘\ORB matching.py,local_archive\legacy\Sift 알고리즘\ORB matching.py,src/sift/ORB matching.py,src/sift,False
-Sift 알고리즘\sift test.py,local_archive\legacy\Sift 알고리즘\sift test.py,src/sift/sift test.py,src/sift,False
-Sift 알고리즘\sift+flann.py,local_archive\legacy\Sift 알고리즘\sift+flann.py,src/sift/sift+flann.py,src/sift,False
-Sift 알고리즘\sift.py,local_archive\legacy\Sift 알고리즘\sift.py,src/sift/sift.py,src/sift,False
-Sift 알고리즘\YOLOv5+sift.py,local_archive\legacy\Sift 알고리즘\YOLOv5+sift.py,src/sift/YOLOv5+sift.py,src/sift,False
+original_relative_path,local_archive_relative_path,public_path,category,deduplicated,previous_public_path,public_sha256
+2DCNN+YOLOv11.ipynb,local_archive\notebooks\2DCNN+YOLOv11.ipynb,notebooks/change_detection/yolov11_2dcnn.ipynb,notebooks/change_detection,False,notebooks/research/2DCNN+YOLOv11.ipynb,ffa946f0cdc03c386c480ea78cfa32625bd7627c41422c69a12fc3dd032ec520
+2DCNN+YOLOv8.ipynb,local_archive\notebooks\2DCNN+YOLOv8.ipynb,notebooks/change_detection/yolov8_2dcnn.ipynb,notebooks/change_detection,False,notebooks/research/2DCNN+YOLOv8.ipynb,725e662908e5b64abc9f9fd0843cc9ddfaa4507d2fede4c238f5b615ce48e6bc
+chart.ipynb,local_archive\notebooks\chart.ipynb,notebooks/analysis/model_comparison.ipynb,notebooks/analysis,False,notebooks/analysis/chart.ipynb,26d30f28bca5c9485bdeea48ea6135bf77920363172280106371424504198198
+EGG_Yolov8.ipynb,local_archive\notebooks\EGG_Yolov8.ipynb,notebooks/legacy/egg_yolov8.ipynb,notebooks/legacy,False,notebooks/legacy/EGG_Yolov8.ipynb,48611a8d931c50874181ef2a43ede719c994738e788572868578739b4fd3d41f
+img.ipynb,local_archive\notebooks\img.ipynb,notebooks/analysis/image_preprocessing.ipynb,notebooks/analysis,False,notebooks/analysis/img.ipynb,c4dffcd6f1c50a61c4ae8b8957c909a798dda99315bc01981b5d974f978f938b
+Mask_RCNN.ipynb,local_archive\notebooks\Mask_RCNN.ipynb,notebooks/legacy/mask_rcnn_reference.ipynb,notebooks/legacy,False,notebooks/legacy/Mask_RCNN.ipynb,0615b822bffb59ee48c728ab1a7048af1184bcfb5d768a72c2f814a91c50bece
+RT-DETR.ipynb,local_archive\notebooks\RT-DETR.ipynb,notebooks/model_experiments/other_detectors/rtdetr_experiments.ipynb,notebooks/model_experiments/other_detectors,False,notebooks/experiments/RT-DETR.ipynb,2e3ca0e967ba506e0e07d52adafe7da0102ac2979612c636983092370a3a8e3a
+SORT.ipynb,local_archive\notebooks\SORT.ipynb,notebooks/legacy/sort_tracking.ipynb,notebooks/legacy,False,notebooks/legacy/SORT.ipynb,bd0d2da5d7de221de250366e578383ac411868ad13ca85d6a7099cdc2935a02c
+Test_Yolov8+.ipynb,local_archive\notebooks\Test_Yolov8+.ipynb,notebooks/model_experiments/yolo/yolov8_detection_segmentation.ipynb,notebooks/model_experiments/yolo,False,notebooks/experiments/Test_Yolov8+.ipynb,ae3f945128642dcbe887ae6ceda4cfb3bd22cb33d09ded819da49282489cff9a
+Test_Yolov8+save.ipynb,local_archive\notebooks\Test_Yolov8+save.ipynb,notebooks/model_experiments/yolo/yolov8_save_reload.ipynb,notebooks/model_experiments/yolo,False,notebooks/experiments/Test_Yolov8+save.ipynb,c9b423a2f272274883ec4056d291cc58c6783f823cdc14b420f2a047c218b904
+Test_Yolov8.ipynb,local_archive\notebooks\Test_Yolov8.ipynb,notebooks/model_experiments/yolo/yolov8_training.ipynb,notebooks/model_experiments/yolo,False,notebooks/experiments/Test_Yolov8.ipynb,17a03446dcc4192a9a100a739156f64366cf40461026095348ea24cf5e7b9957
+Wire detection good.ipynb,local_archive\notebooks\Wire detection good.ipynb,notebooks/change_detection/wire_change_detection.ipynb,notebooks/change_detection,False,notebooks/research/Wire detection good.ipynb,5511c4dbaefefdc3674325af58b48aca83fdb590ec96218b1c64e85e72d7ff83
+YOLOv11.ipynb,local_archive\notebooks\YOLOv11.ipynb,notebooks/model_experiments/yolo/yolov11_experiments.ipynb,notebooks/model_experiments/yolo,False,notebooks/experiments/YOLOv11.ipynb,548e527537f96de7f50be76570d3f622d38e0e83dc21a402c1517f6e7250b8c1
+모델 이상 탐지.ipynb,local_archive\notebooks\모델 이상 탐지.ipynb,notebooks/change_detection/anomaly_detection.ipynb,notebooks/change_detection,False,notebooks/research/모델 이상 탐지.ipynb,87c7e5d6e4cc0a63404dc6ec52b4b177ff9cbd44249ac5b4c1f75455b137f6f6
+detectron2-main\detectron2.ipynb,local_archive\frameworks\detectron2-main\detectron2.ipynb,notebooks/model_experiments/other_detectors/mask_rcnn_fpn.ipynb,notebooks/model_experiments/other_detectors,False,notebooks/experiments/detectron2-main__detectron2.ipynb,0a08af5ccea610c273c167c6918316cdc55029fbd7eda45d6d21670d201aa61c
+mmdetection-main\MaskRCNN+ConvNeXT.ipynb,local_archive\frameworks\mmdetection-main\MaskRCNN+ConvNeXT.ipynb,notebooks/model_experiments/other_detectors/mask_rcnn_convnext.ipynb,notebooks/model_experiments/other_detectors,False,notebooks/experiments/mmdetection-main__MaskRCNN+ConvNeXT.ipynb,643037a9917e246182b3d7404b94904e78826bf8d66b3e04c324c2339e857cf9
+mmdetection-main\RTMDet.ipynb,local_archive\frameworks\mmdetection-main\RTMDet.ipynb,notebooks/model_experiments/other_detectors/rtmdet_segmentation.ipynb,notebooks/model_experiments/other_detectors,False,notebooks/experiments/mmdetection-main__RTMDet.ipynb,bee578e6997c9f3100b8d92808c36522385c8cf31439184f4581624c14266d8b
+ultralytics-main\Wire detection good.ipynb,local_archive\frameworks\ultralytics-main\Wire detection good.ipynb,notebooks/change_detection/variants/ultralytics_wire_comparison.ipynb,notebooks/change_detection/variants,False,notebooks/research/ultralytics-main__Wire detection good.ipynb,bacf04bbce09011055d3039178ea398d0ef2fb47ca15b3a075c9e75049649f62
+yolov9-main\YOLOv9c-seg.ipynb,local_archive\frameworks\yolov9-main\YOLOv9c-seg.ipynb,notebooks/model_experiments/yolo/yolov9_segmentation.ipynb,notebooks/model_experiments/yolo,False,notebooks/experiments/yolov9-main__YOLOv9c-seg.ipynb,e3f2c490befebb80b4350c5e95b216294b76c86dc068b1625033553ec384ed5e
+yolov9-main\모델 이상 탐지.ipynb,local_archive\frameworks\yolov9-main\모델 이상 탐지.ipynb,notebooks/change_detection/anomaly_detection.ipynb,notebooks/change_detection,True,notebooks/research/모델 이상 탐지.ipynb,87c7e5d6e4cc0a63404dc6ec52b4b177ff9cbd44249ac5b4c1f75455b137f6f6
+Wire 변화 탐지\test 1\wiretest.ipynb,local_archive\results\change_detection\test 1\wiretest.ipynb,notebooks/change_detection/variants/wiretest_1.ipynb,notebooks/change_detection/variants,False,notebooks/research/test 1__wiretest.ipynb,5c6933b164f56758e014649a66a5b12cdcbf8cb1500b65cac65be97a03ec408a
+Wire 변화 탐지\test 2\wiretest copy.ipynb,local_archive\results\change_detection\test 2\wiretest copy.ipynb,notebooks/change_detection/variants/wiretest_2.ipynb,notebooks/change_detection/variants,False,notebooks/research/test 2__wiretest copy.ipynb,18d25ddbd3a7de7985697474710646008adfcec3719bf66d062613b542a89b7d
+Sift 알고리즘\ORB matching.py,local_archive\legacy\Sift 알고리즘\ORB matching.py,scripts/feature_matching/orb_matching.py,scripts/feature_matching,False,src/sift/ORB matching.py,23765a07e040817dcf8b2ddaaedd8914bd1bbaa0d521a7fc3cade6891591c717
+Sift 알고리즘\sift test.py,local_archive\legacy\Sift 알고리즘\sift test.py,scripts/feature_matching/sift_change_detection.py,scripts/feature_matching,False,src/sift/sift test.py,5e5d1365ccc61f2cf2e6ac5615ea0aa7182383c3dfbc6a6b5569973f32bf035e
+Sift 알고리즘\sift+flann.py,local_archive\legacy\Sift 알고리즘\sift+flann.py,scripts/feature_matching/sift_flann_matching.py,scripts/feature_matching,False,src/sift/sift+flann.py,7c21c440e7504eebed6f02e557df7ae5e88a4fb528abec17722ee3524b7452af
+Sift 알고리즘\sift.py,local_archive\legacy\Sift 알고리즘\sift.py,scripts/feature_matching/sift_bf_matching.py,scripts/feature_matching,False,src/sift/sift.py,755d72396938051ce829ce8aae12c9e52d0f0da2f935b87ddee3991f44be884e
+Sift 알고리즘\YOLOv5+sift.py,local_archive\legacy\Sift 알고리즘\YOLOv5+sift.py,scripts/baselines/yolov5_change_detection.py,scripts/baselines,False,src/sift/YOLOv5+sift.py,ef9bb5a20fc8d9a0c8061e37a02a8c56a61ee87be0bfa9f197931896aa23586d

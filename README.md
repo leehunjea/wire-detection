@@ -25,16 +25,16 @@
 
 ## 대표 결과
 
-![두 배전설비 영상을 비교하고 추가된 영역을 녹색 상자로 표시한 변화 탐지 사례](results/representative/change_detection_success.png)
+![두 배전설비 영상을 비교하고 추가된 영역을 녹색 상자로 표시한 변화 탐지 사례](results/figures/change_detection_success.png)
 
 *보관된 실험의 변화 탐지 사례. 오른쪽 영상의 추가된 영역을 `Added`로 표시했습니다.*
 
 <details>
 <summary>비교 방법별 시각화 더 보기</summary>
 
-![영상 비교 방법별 변화 영역 시각화](results/representative/methods_comparison.jpg)
+![영상 비교 방법별 변화 영역 시각화](results/figures/methods_comparison.jpg)
 
-이미지에 표시된 변화율은 해당 영상 쌍의 출력값입니다. 전체 데이터셋의 정확도를 뜻하지 않습니다. 이미지별 원본 위치는 [대표 결과 안내](results/representative/README.md)에 기록했습니다.
+이미지에 표시된 변화율은 해당 영상 쌍의 출력값입니다. 전체 데이터셋의 정확도를 뜻하지 않습니다. 이미지별 원본 위치는 [대표 결과 안내](results/README.md)에 기록했습니다.
 
 </details>
 
@@ -52,7 +52,7 @@
 
 YOLOv11l-seg와 YOLOv8l-seg의 mAP@50은 **0.830**으로 같으며, F1과 mAP@50:95는 YOLOv8l-seg가 더 높습니다. 위 값은 객체 탐지 모델의 평가 지표로, 변화·이상 탐지 전체 과정의 정확도를 의미하지 않습니다. [출처: 논문 68쪽](https://www.kism.or.kr/file/memoir/14_8_7.pdf#page=9)
 
-표의 수치는 [모델 비교 노트북](notebooks/analysis/chart.ipynb)에 기록된 값과 대조했습니다. 이번 공개 정리 과정에서 학습·평가를 다시 실행한 값은 아닙니다.
+표의 수치는 [모델 비교 노트북](notebooks/analysis/model_comparison.ipynb)에 기록된 값과 대조했습니다. 이번 공개 정리 과정에서 학습·평가를 다시 실행한 값은 아닙니다.
 
 ## 연구 구성
 
@@ -66,27 +66,28 @@ YOLOv11l-seg와 YOLOv8l-seg의 mAP@50은 **0.830**으로 같으며, F1과 mAP@50
 
 | 살펴볼 내용 | 노트북 |
 |:---|:---|
-| 2DCNN과 YOLOv11을 이용한 영상 비교 | [2DCNN + YOLOv11](notebooks/research/2DCNN%2BYOLOv11.ipynb) |
-| YOLOv11 세그멘테이션 학습·추론 실험 | [YOLOv11](notebooks/experiments/YOLOv11.ipynb) |
-| 배전공가 변화·이상 탐지 실험 | [모델 이상 탐지](notebooks/research/모델%20이상%20탐지.ipynb) |
-| 모델별 정량 결과와 비교 그래프 | [chart](notebooks/analysis/chart.ipynb) |
+| 2DCNN과 YOLOv11을 이용한 영상 비교 | [2DCNN + YOLOv11](notebooks/change_detection/yolov11_2dcnn.ipynb) |
+| YOLOv11 세그멘테이션 학습·추론 실험 | [YOLOv11](notebooks/model_experiments/yolo/yolov11_experiments.ipynb) |
+| 배전공가 변화·이상 탐지 실험 | [모델 이상 탐지](notebooks/change_detection/anomaly_detection.ipynb) |
+| 모델별 정량 결과와 비교 그래프 | [chart](notebooks/analysis/model_comparison.ipynb) |
 
-비교 모델과 코드의 대응 관계는 [논문과 연구 코드 안내](docs/PAPER.md)에서 확인할 수 있습니다.
+전체 파일은 [코드 구성 안내](docs/CODE_MAP.md)에서, 비교 모델과 논문의 대응 관계는 [논문과 연구 코드 안내](docs/PAPER.md)에서 확인할 수 있습니다.
 
 <details>
 <summary>저장소 구조</summary>
 
 ```text
 notebooks/
-  research/             변화·이상 탐지 연구
-  experiments/          모델별 학습·추론 실험
-  analysis/             비교 그래프·영상 전처리
-  legacy/               초기·참고 실험
-src/sift/               특징점 기반 영상 비교
-results/representative/ 대표 시각화 결과
-docs/                   논문·환경·데이터·파일 출처 안내
-CITATION.cff            논문 인용 메타데이터
-CITATION.bib            BibTeX
+  change_detection/       변화·이상 탐지와 비교 버전
+  model_experiments/      YOLO·다른 검출 모델의 실험
+  analysis/               모델 비교·영상 전처리
+  legacy/                 초기·참고 실험
+scripts/
+  feature_matching/       SIFT·ORB 특징점 비교
+  baselines/              YOLOv5 기반 변화 탐지
+results/figures/          대표 결과 이미지
+docs/                     논문·코드·환경·자료 안내
+CITATION.*                논문 인용 정보
 ```
 
 </details>
@@ -94,6 +95,8 @@ CITATION.bib            BibTeX
 ## 실행 및 자료 안내
 
 이 저장소는 **연구 노트북 아카이브**입니다. 실행하려면 선택한 노트북의 데이터·가중치 경로를 수정하고 해당 모델의 환경을 준비해야 합니다. 노트북에는 원본 코드 셀을 보존했으며, 공개 사본의 저장된 출력과 실행 번호를 제거했습니다.
+
+[노트북 안내](notebooks/README.md) · [Python 스크립트 안내](scripts/README.md)
 
 원본 데이터, 모델 가중치, 전체 학습 로그와 원본 노트북 출력은 로컬 아카이브에 별도로 보관합니다. 공개 저장소에는 코드·문서·대표 결과를 포함했습니다.
 

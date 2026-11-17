@@ -15,14 +15,14 @@
 
 | 관심 내용 | 관련 파일 | 코드에서 확인한 내용 |
 |---|---|---|
-| 2DCNN과 검출·분할 모델을 이용한 영상 비교 | [2DCNN+YOLOv11](../notebooks/research/2DCNN%2BYOLOv11.ipynb) | `Simple2DCNN`, `nn.Conv2d`, 모델 가중치를 이용한 여러 실험 셀 |
-| YOLOv11 세그멘테이션 실험 | [YOLOv11](../notebooks/experiments/YOLOv11.ipynb) | `YOLO('yolo11l-seg.pt')` 로딩과 관련 실험 |
-| 배전공가 변화·이상 탐지 | [모델 이상 탐지](../notebooks/research/모델%20이상%20탐지.ipynb) | 영상 비교와 CNN 관련 실험 |
-| Mask R-CNN 계열 비교 | [Detectron2 실험](../notebooks/experiments/detectron2-main__detectron2.ipynb) | ResNet/FPN 백본 설정 |
-| ConvNeXt 계열 비교 | [MaskRCNN+ConvNeXT](../notebooks/experiments/mmdetection-main__MaskRCNN%2BConvNeXT.ipynb) | ConvNeXt 체크포인트와 대체 설정을 포함한 실험 |
-| 모델 비교 그래프 | [chart](../notebooks/analysis/chart.ipynb) | 초록에 등장하는 비교 모델 이름과 그래프 생성 코드 |
+| 2DCNN과 검출·분할 모델을 이용한 영상 비교 | [2DCNN+YOLOv11](../notebooks/change_detection/yolov11_2dcnn.ipynb) | `Simple2DCNN`, `nn.Conv2d`, 모델 가중치를 이용한 여러 실험 셀 |
+| YOLOv11 세그멘테이션 실험 | [YOLOv11](../notebooks/model_experiments/yolo/yolov11_experiments.ipynb) | `YOLO('yolo11l-seg.pt')` 로딩과 관련 실험 |
+| 배전공가 변화·이상 탐지 | [모델 이상 탐지](../notebooks/change_detection/anomaly_detection.ipynb) | 영상 비교와 CNN 관련 실험 |
+| Mask R-CNN 계열 비교 | [Detectron2 실험](../notebooks/model_experiments/other_detectors/mask_rcnn_fpn.ipynb) | ResNet/FPN 백본 설정 |
+| ConvNeXt 계열 비교 | [MaskRCNN+ConvNeXT](../notebooks/model_experiments/other_detectors/mask_rcnn_convnext.ipynb) | ConvNeXt 체크포인트와 대체 설정을 포함한 실험 |
+| 모델 비교 그래프 | [chart](../notebooks/analysis/model_comparison.ipynb) | 초록에 등장하는 비교 모델 이름과 그래프 생성 코드 |
 
-`chart.ipynb`에 기록된 다섯 모델의 F1, Precision, Recall, mAP50, mAP50–95 값은 [학회 공식 논문 PDF의 68쪽](https://www.kism.or.kr/file/memoir/14_8_7.pdf#page=9)과 대조하여 모두 일치함을 확인했습니다. README의 성능 표는 이 논문 보고값을 옮긴 것이며, 정리 과정에서 학습·평가를 다시 실행하지 않았습니다. 객체 탐지 모델의 평가 지표를 변화·이상 탐지 전체 과정의 정확도로 해석하지 않습니다. RT-DETR·RTMDet·SIFT·초기 실험도 함께 보존되어 있습니다.
+`model_comparison.ipynb`(이전 이름: `chart.ipynb`)에 기록된 다섯 모델의 F1, Precision, Recall, mAP50, mAP50–95 값은 [학회 공식 논문 PDF의 68쪽](https://www.kism.or.kr/file/memoir/14_8_7.pdf#page=9)과 대조하여 모두 일치함을 확인했습니다. README의 성능 표는 이 논문 보고값을 옮긴 것이며, 정리 과정에서 학습·평가를 다시 실행하지 않았습니다. 객체 탐지 모델의 평가 지표를 변화·이상 탐지 전체 과정의 정확도로 해석하지 않습니다. RT-DETR·RTMDet·SIFT·초기 실험도 함께 보존되어 있습니다.
 
 ## 인용
 

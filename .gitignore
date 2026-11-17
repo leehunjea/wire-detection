@@ -1,4 +1,4 @@
-# Raw research assets remain in the sibling local_archive folder.
+# Raw research assets remain in a separate local_archive folder.
 local_archive/
 archive/
 data/
